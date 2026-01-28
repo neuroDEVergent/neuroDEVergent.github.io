@@ -1,0 +1,42 @@
+body {
+  background-color: black;
+  font-family: monospace;
+  color: orange;
+  font-size: 18pt;
+}
+
+#menu-bar {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-bar a {
+  text-decoration: none;
+  color: #ff9c00;
+}
+
+#menu-bar a:hover {
+  text-decoration: underline;
+}
+
+#menu-bar a.active {
+  background-color: #ff9c00;
+  text-decoration: none;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+h1 {
+  font-size: 22pt;
+  padding-top: 30px;
+  margin: 10px;
+}
+
+p {
+  padding-top: 10px;
+  margin: 10px;
+}
