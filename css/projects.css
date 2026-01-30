@@ -1,0 +1,84 @@
+.content {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.content h3, .content p {
+  margin: 0;
+}
+
+.project {
+  display: block;
+  position: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  height: 300px;
+  color: #ff9c00;
+  text-decoration: none;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.project.p7 {
+  background-image: url(../assets/horizon-collapse/horizon-collapse-cover.webp)
+}
+
+.project.p7:hover {
+  background-image: url(../assets/horizon-collapse/horizon-collapse-cover.gif)
+}
+
+.project.p6 {
+  background-image: url(../assets/tapestry/tapestry-cover.webp)
+}
+
+.project.p6:hover {
+  background-image: url(../assets/tapestry/tapestry-cover.gif)
+}
+
+.project.p5 {
+  background-image: url(../assets/shader-playground/shader-playground-cover.webp)
+}
+
+.project.p5:hover {
+  background-image: url(../assets/shader-playground/shader-playground-cover.gif)
+}
+
+.project.p4 {
+  background-image: url(../assets/opengl-lighting/opengl-lighting-cover.webp)
+}
+
+.project.p4:hover {
+  background-image: url(../assets/opengl-lighting/opengl-lighting-cover.gif)
+}
+
+.project.p3 {
+  background-image: url(../assets/rule-of-three/rule-of-three-cover.webp)
+}
+
+.project.p3:hover {
+  background-image: url(../assets/rule-of-three/rule-of-three-cover.gif)
+}
+
+.project.p2 {
+  background-image: url(../assets/ultra-vires-insectum/ultra-vires-insectum-cover.webp)
+}
+
+.project.p2:hover {
+  background-image: url(../assets/ultra-vires-insectum/ultra-vires-insectum-cover.gif)
+}
+
+.project.p1 {
+  background-image: url(../assets/proxy/proxy-cover.webp);
+}
+.project.p1:hover {
+  background-image: url(../assets/proxy/proxy-cover.gif);
+}

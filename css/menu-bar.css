@@ -1,0 +1,24 @@
+#menu-bar {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-bar a {
+  text-decoration: none;
+  color: #ff9c00;
+}
+
+#menu-bar a:hover {
+  text-decoration: underline;
+}
+
+#menu-bar a.active {
+  background-color: #ff9c00;
+  text-decoration: none;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
