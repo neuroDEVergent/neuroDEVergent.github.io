@@ -19,49 +19,82 @@
   </div>
   <div class="page-body">
     <div class="intro">
-      <h2>Title</h2>
+      <h2>Ultra Vires Insectum</h2>
       <ul class="references">
-        <li><a href="">Play on Itch.io</a></li>
+        <li><a href="https://github.com/neuroDEVergent/ultra-vires-insectum">GitHub</a></li>
+        <li><a href="https://docs.google.com/document/d/1KV2f-TEIoYs-erQsJCZqm7rpiAowbNGO69SkqM_0P30/edit?usp=sharing">GDD</a></li>
+        <li><a href="https://open.spotify.com/album/3gwb2NGpWSITaRcpN2rmrn">OST</a></li>
       </ul>
       <hr>
-      <p>One sentence description</p>
-      <img src="../assets/.webp">
+      <p>Isometric pixel art roguelike written in Lua with LOVE2D</p>
+      <img src="../assets/ultra-vires-insectum/ultra-vires-insectum-cover.webp">
     </div>
     <hr>
   <div class="description">
+    <h3>Description</h3>
     <p>
-      Description in few paragraphs
+      <strong>Ultra Vires Insectum</strong> is an anime style isometric roguelike set in a glitchy city overrun by alienated bugs. You play as a cast of colorful, powerful anime girls who dive into the streets to wipe out the infestation, scavenging items and powerups as they go.<br>
+      Gameplay is <strong>fast</strong>, <strong>chaotic</strong> and <strong>skill-driven</strong> with different item combinations to introduce <strong>randomness</strong> to the whole picture.
     </p>
-    <br>
     <p>
-      Another paragraph
+      Each <strong>area</strong> on the map of the city, is methaphorically represented as a different <strong>computer part</strong>. And each objective is represented as an <strong>error</strong> depending in which part of the map it is located. 
+    </p>
+    <h3>Lessons learned</h3>
+    <p>
+      Unfortunately, it ended up being an abandoned unfinished project as the team slowly drifted away from it for multiple reasons, which were very important lessons.       
+    </p>
+    <p>
+      Main problem was the overall design direction. Isometric perspective was chosen because we all wanted to do it and thought it would be "cool". But it was a completely wrong design choice for this game. 360 degree rotations, fast paced game, isometric perspective and pixel art turned out to be a completely wrong mix. <br>
+      We wanted 360 degree rotations with mouse aiming and shooting, but our isometric perspective allows us for basically 2 directions and two mirros of those directions, which is very restricting, and doesn't translate well with animation sprites. Sprites were supposed to be just rendered sprite frames, but arm holding out a gun would actually be a separate object, which would freely rotate in 360 degrees so it could follow mouse aim properly. To make it worse, rotating that element which is drawn in pixel art would just look horrible and nothing like we had in mind. And drawing such rotations per frame in pixel art was a nightmare. I truly believe that is what killed our project. 
+    </p>
+    <h3>Programming accomplishments</h3>
+    <p>
+      Even though project got abandoned, I loved programming it. I was the only programmer on the team so I had a lot of freedom in my design approaches. I decided to use LOVE2D framework, which uses Lua as it's scripting language, and it's built on top of OpenGL. 
+      <br>
+      It's a fully 2d framework, so I thought it would be a fun challenge to perform transformations into an isometric perspective. In addition to that, I wanted to provide an additional challenge for myself, which was to use functional design approach, and all I ever did up until this point was OOP.
+      <br>
+      <br>
+      So I ended up making a <strong>coordinate transformation system</strong>, because main game logic was done fully in 2d, but it was just transformed into isometric coordinates before the screen draw.<br>
+      A custom <strong>sprite animator</strong> which handles asset imports, splitting them into frames, and playing correct animation based on the player's state and orientation.<br>
+      A <strong>Tiled map integration</strong>, where you could just use Tiled to design a map, and output it to a .lua file, which the map drawer can interpret and draw in the correct layer order.<br>
+      <strong>Z-sorting</strong> for correct entity layering, so the draw order of objects is right.<br>
+      <strong>Basic collision detection</strong> was implemented, and that's where the project started dying.<br><br>
+      
+      I basically used <strong>0</strong> external libraries and have written everyting single handedly from scratch.
     </p>
   </div>
   <hr>
   <div class="technologies">
     <h4>Technologies used</h4>
     <ul>
-      <li>Tech 1</li>
-      <li>Tech 2</li>
+      <li>Lua</li>
+      <li>Love2D</li>
+      <li>Tiled</li>
     </ul>
   </div>
   <hr>
   <div class="contributions">
     <h4>Contributions</h4>
     <ul>
-      <li>Contribution 1</li>
-      <li>Contribution 2</li>
+      <li>Isometric coordinate transformation system</li>
+      <li>Z-sorting for correct entity layering</li>
+      <li>Tiled map integration for custom map drawer</li>
+      <li>Entity animation handler</li>
+      <li>Collision detection</li>
       <li>Bug fixing</li>
     </ul>
-    <img src="../assets/.gif">
-    <p class="img-desc"><em>gif example description</em>
+    <img src="../assets/ultra-vires-insectum/ultra-vires-insectum-cover.gif">
+    <p class="img-desc"><em>Example</em>
   </div>
   <hr>
   <div class="team">
     <h4>Team</h4>
     <ul>
-      <li>Person1</li>
-      <li>Person2</li>
+      <li>p - Programming</li>
+      <li>Elena - Pixel art</li>
+      <li>Sketch- Pixel art</li>
+      <li>Joe - Concept art</li>
+      <li>Sash - Music and sfx</li>
     </ul>
   </div>
 </body>

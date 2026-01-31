@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <title>P</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/menu-bar.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div>
+    <ul id="menu-bar">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </div>
+  <div class="page-body">
+    <div class="intro">
+      <h2>Ultra Vires Insectum</h2>
+      <ul class="references">
+        <li><a href="https://github.com/neuroDEVergent/ultra-vires-insectum">GitHub</a></li>
+        <li><a href="https://docs.google.com/document/d/1KV2f-TEIoYs-erQsJCZqm7rpiAowbNGO69SkqM_0P30/edit?usp=sharing">GDD</a></li>
+      </ul>
+      <hr>
+      <p>Isometric pixel art roguelike written in Lua with LOVE2D</p>
+      <img src="../assets/ultra-vires-insectum/ultra-vires-insectum-cover.webp">
+    </div>
+    <hr>
+  <div class="description">
+    <h3>Description</h3>
+    <p>
+      <strong>Ultra Vires Insectum</strong> is an anime style isometric roguelike set in a glitchy city overrun by alienated bugs. You play as a cast of colorful, powerful anime girls who dive into the streets to wipe out the infestation, scavenging items and powerups as they go.<br>
+      Gameplay is <strong>fast</strong>, <strong>chaotic</strong> and <strong>skill-driven</strong> with different item combinations to introduce <strong>randomness</strong> to the whole picture.
+      Each <strong>area</strong> on the map of the city, is methaphorically represented as a different <strong>computer part</strong>. And each objective is represented as an <strong>error</strong> depending in which part of the map it is located. 
+    </p>
+    <br>
+    <p>
+      Unfortunately, it ended up being an abandoned unfinished project as the team slowly drifted away from it for multiple reasons, which were very important lessons. 
+
+      
+    </p>
+  </div>
+  <hr>
+  <div class="technologies">
+    <h4>Technologies used</h4>
+    <ul>
+      <li>Tech 1</li>
+      <li>Tech 2</li>
+    </ul>
+  </div>
+  <hr>
+  <div class="contributions">
+    <h4>Contributions</h4>
+    <ul>
+      <li>Contribution 1</li>
+      <li>Contribution 2</li>
+      <li>Bug fixing</li>
+    </ul>
+    <img src="../assets/.gif">
+    <p class="img-desc"><em>gif example description</em>
+  </div>
+  <hr>
+  <div class="team">
+    <h4>Team</h4>
+    <ul>
+      <li>Person1</li>
+      <li>Person2</li>
+    </ul>
+  </div>
+</body>
+</html>
