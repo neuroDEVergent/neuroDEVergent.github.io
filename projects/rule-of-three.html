@@ -19,50 +19,74 @@
   </div>
   <div class="page-body">
     <div class="intro">
-      <h2>Title</h2>
+      <h2>Rule of Three</h2>
       <ul class="references">
-        <li><a href="">Play on Itch.io</a></li>
+        <li><a href="https://neuro-dev-ergent.itch.io/rule-of-three">Play on Itch.io</a></li>
+        <li><a href="https://github.com/neuroDEVergent/rule-of-three">GitHub Repo</a></li>
       </ul>
       <hr>
-      <p>One sentence description</p>
-      <img src="../assets/.webp">
+      <p>2D action game developed completely solo as a submission for Two Desperados' 2025. Game Jam</p>
+      <img src="../assets/rule-of-three/rule-of-three-eg1.webp">
     </div>
     <hr>
   <div class="description">
+    <h3>About the game</h3>
     <p>
-      Description in few paragraphs
+      Theme of this game jam was <strong>"three rules"</strong>, so I decided to use <strong>the rule of threes</strong>.<br>
+      The rule of three is a writing principle which suggests that a trio of entities - events or characters - is more humorous, satisfying, or effective than other numbers. Having three entities combines brevity and rhythm with the smallest amount of information required to create a pattern. <br>We explore this idea in an action/adventure game where everything comes in triads.
     </p>
-    <br>
-    <p>
-      Another paragraph
-    </p>
+    <h4>Three Main Mechanics</h4>
+    <ul>
+      <li>Walk</li>
+      <li>Attack</li>
+      <li>Dissolve / Condense (teleport)</li>
+    </ul>
+    <h4>Three Levels</h4>
+    <ul>
+      <li>Mundane Night City</li>
+      <li>Desert of Lost Souls</li>
+      <li>Home Sweet Home</li>
+    </ul>
+  <h4>Three Enemies</h4>
+    <ul>
+      <li>Soulless Ghostly Wanderer</li>
+      <li>Ivory Death Stalker</li>
+      <li>Grim the Plague Bringer</li>
+    </ul>
+  <h3>Design Patterns used and their implementations</h3>
+    <ul>
+      <li><strong>State Machine:</strong> Each entity is a state machine, encapsulated in its own script. States are defined per entity and we switch between them from the entity controller script.</li>
+      <li><strong>Singleton:</strong> A global PlayerSingleton tracks persistent metrics and shares data between scenes.</li>
+      <li><strong>Observer:</strong> Implemented via Godot signals. Events that don't require per-frame checking (state switches, hitbox/hurtbox events) are handled on signal emission.</li>
+      <li><strong>Factory Pattern:</strong> Represented by spawners that instantiate enemies and add them as children of the current scene until destroyed.</li>
+    </ul>
+  <h3>How Certain Features are Implemented and Algorithms used</h3>
+  <h4>Enemy States</h4>
+  <p>When idle, enemies slowly walk toward the player's global position (from PlayerSingleton). Each enemy has a defined "chasing area". Once the player enters it, the enemy is triggered into a chasing state with faster movement and a different animation. If the player enters the "attacking area", the enemy switches to attacking state and deals a certain amount of damage every second. On death, a death animation plays; after the animation finishes the enemy node is safely removed from the scene.</p>
+  <h4>Collisions</h4>
+  <p>Separate layers and masks are used for each collision area so they don't interfere. A layer represents the "realm" the area exists in; a mask represents which realms it checks for. Player and enemy hitboxes are activated only during the attacking state and deactivated on exit.</p>
+  <h4>Parallax Background</h4>
+  <p>Layered backgrounds create a parallax effect. When a layer reaches a defined point it is duplicated across the X axis so it scrolls indefinitely. Each layer uses a different scale factor so it moves at a different speed. A separate "smog" layer has transparency and moves faster to appear closer to the camera.</p>
+  <h4>Player States</h4>
+  <p>Input detection is isolated in controller logic. On input, the controller switches to the appropriate player state which plays the corresponding animations.</p>
+  <h4>Enemy Spawners</h4>
+  <p>On each level, there are enemy spawners, that are continuously spawning enemies depending on the customizable timer interval. They are using a function that randomizes which enemy will be spawned based on provided weight.</p>
+  <h4>Item dropping</h4>
+  <p>In a similar fashion, both, enemies and destroyed spawners can drop an item, also randomized based on the weight</p>
   </div>
   <hr>
   <div class="technologies">
     <h4>Technologies used</h4>
     <ul>
-      <li>Tech 1</li>
-      <li>Tech 2</li>
+      <li>Godot Engine 4.4</li>
+      <li>GDScript</li>
+      <li>Aseprite</li>
     </ul>
   </div>
   <hr>
   <div class="contributions">
-    <h4>Contributions</h4>
-    <ul>
-      <li>Contribution 1</li>
-      <li>Contribution 2</li>
-      <li>Bug fixing</li>
-    </ul>
-    <img src="../assets/.gif">
-    <p class="img-desc"><em>gif example description</em>
-  </div>
-  <hr>
-  <div class="team">
-    <h4>Team</h4>
-    <ul>
-      <li>Person1</li>
-      <li>Person2</li>
-    </ul>
+    <img src="../assets/rule-of-three/rule-of-three-cover.gif">
+    <p class="img-desc"><em>Gameplay example</em>
   </div>
 </body>
 </html>
