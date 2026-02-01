@@ -19,50 +19,112 @@
   </div>
   <div class="page-body">
     <div class="intro">
-      <h2>Title</h2>
+      <h2>Horizon Collapse</h2>
       <ul class="references">
         <li>Links:</li>
-        <li><a href="">Play on Itch.io</a></li>
+        <li><a href="https://imouto36.itch.io/horizon-collapse"><strong>Play on Itch.io</strong></a></li>
       </ul>
       <hr>
-      <p>One sentence description</p>
-      <img src="../assets/.webp">
+      <p>An infinite runner created for the 10 day long Patch Notes v1.1 game jam.</p>
+      <img src="../assets/horizon-collapse/horizon-collapse-cover2.webp">
+      <p class="img-desc"><em>Official Cover</em></p>
     </div>
     <hr>
   <div class="description">
+    <h4>About the project</h4>
     <p>
-      Description in few paragraphs
+      There is a black hole sucking everything in! Your goal is to try your best and escape from the singularity. Game is designed to be an infinite runner, with a ticking clock. If the timer reaches 0, you lost! You have to dodge gravitational well so you don't lose time. And move through temporal dialation fields in order to gain time!
     </p>
-    <br>
     <p>
-      Another paragraph
+      Game was developed in Godot Engine with a heavy focus on shaders and visual effects. 
+    </p>
+    <img src="../assets/horizon-collapse/horizon-collapse-cover.webp">
+    <p class="img-desc"><em>Gameplay Screenshot</em></p>
+    <h4>Programming Implementations</h4>
+    <p>
+      In this section I'd like to talk a bit more about how certain things were implemented.<br>
+      First of all, we wanted the perspective to look as if the screenspace was just a slice of a torus, and for our character to pivot around the singularity. We achieved this effect by using Godot's <strong>SubViewport</strong>, allowing an independent region to be rendered separately. We do this because we want our game and it's entities to go through a certain transformation, but our UI elemens should remain untouched. 
+    </p>
+    <p>
+      From there, we render our whole SubViewport as a <strong>Sprite2D node</strong> on top of which we apply our <strong>polar coordinate transformation shader</strong>!<br>
+      We place an imaginary point representing the singularity somewhere under the screen, then for each fragment, instead of describing it with it's X and Y coordinate, X coordinate becomes an <strong>angle it makes</strong> with the singularity, and Y becomes a <strong>distance from</strong> it. 
+    </p>
+    <p>
+      Shader was written with a lot of modularity in mind, because we had to do a lot of variable tweaking to get it to look right, such as singularity distance, or X and Y fracture, or the amount of curvature we want.  
+    </p>
+    <p>
+      Our whole game is just a very basic 2D style top to bottom infinite scroller, but getting it through this shader achieves such a different kind of look and feel to it!.
+    </p>
+    <h4>Other Shaders and Visual Effects</h4>
+    <p>
+      This section is basically just an excuse to showcase rest of the shaders I've made! :D
+    </p>
+    <p>
+      Pretty much all objects including the background, have <strong>20+</strong> textures and <strong>2 to 3 uniform variables</strong> which are randomized per material change, so we have so much variation that it's almost imposible to capture it all. But here are some of my favorite examples:
+    </p>
+    <ul class="references">
+      <li>
+        <img src="../assets/horizon-collapse/gravity-well-eg1.gif" class="egg">
+        <p class="img-desc"><em>Gravity Well eg1</em></p>
+      </li>
+    <li>
+      <img src="../assets/horizon-collapse/gravity-well-eg2.gif" class="egg">
+      <p class="img-desc"><em>Gravity Well eg2</em></p>
+    </li>
+    <li>
+      <img src="../assets/horizon-collapse/gravity-well-eg3.gif" class="egg">
+      <p class="img-desc"><em>Gravity Well eg3</em></p>
+    </li>
+    </ul>
+    <br><br>
+    <ul class="references">
+      <li>
+        <img src="../assets/horizon-collapse/dialation-field-eg1.gif" class="egg">
+        <p class="img-desc"><em>Dialation Field eg1</em></p>
+      </li>
+      <li>
+        <img src="../assets/horizon-collapse/dialation-field-eg2.gif" class="egg">
+        <p class="img-desc"><em>Dialation Field eg2</em></p>
+      </li>
+      <li>
+        <img src="../assets/horizon-collapse/dialation-field-eg3.gif" class="egg">
+        <p class="img-desc"><em>Dialation Field eg3</em></p>
+      </li>
+    </ul><br><br>
+    <p>And amazingly simple but very cool looking, chromatic aberration effect along with randomized background change!</p>
+    <img src="../assets/horizon-collapse/horizon-collapse-cover.gif">
+    <p>We use Godot's Tweens to slowly reduce the cromatic aberration back to normal, as well as the background change.<br><br>
+    Overall it was a super fun project to do and I'm very happy with it!.
     </p>
   </div>
   <hr>
   <div class="technologies">
     <h4>Technologies used</h4>
     <ul>
-      <li>Tech 1</li>
-      <li>Tech 2</li>
+      <li><strong>Godot Engine</strong></li>
+      <li><strong>GDScript</strong></li>
+      <li><strong>Godot Shading Language</strong></li>
     </ul>
   </div>
   <hr>
   <div class="contributions">
     <h4>Contributions</h4>
     <ul>
-      <li>Contribution 1</li>
-      <li>Contribution 2</li>
+      <li>Shaders and Visual Effects</li>
+      <li>Gameplay Logic</li>
+      <li>Difficulty Balacing</li>
+      <li>Playtesting</li>
       <li>Bug fixing</li>
     </ul>
-    <img src="../assets/.gif">
-    <p class="img-desc"><em>gif example description</em>
   </div>
   <hr>
   <div class="team">
     <h4>Team</h4>
     <ul>
-      <li>Person1</li>
-      <li>Person2</li>
+      <li><strong>p</strong> - Gameplay Logic and Shaders</li>
+      <li><strong><a href="https://ice-spark-studios.itch.io/">Maria</a></strong> - Gameplay Logic</li>
+      <li><strong><a href="https://cashodge.itch.io/">Kash</a></strong> - Music and SDX</li>
+      <li><strong><a href="https://imouto36.itch.io/">Imouto</a></strong> - Concept and Design</li>
     </ul>
   </div>
 </body>
