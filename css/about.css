@@ -11,9 +11,14 @@ h3 {
   gap: 1rem;
 }
 
+.links li {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .links a {
   color: #ff9c00;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .links a:hover {
