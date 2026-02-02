@@ -1,6 +1,7 @@
 body {
   background-color: black;
-  font-family: monospace;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
   color: #ff9c00;
   font-size: clamp(16pt, 2vw, 18pt);
 }
